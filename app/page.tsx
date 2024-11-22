@@ -89,7 +89,9 @@ export default function Home() {
   }, [isDetected, isGameOver]);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3001");
+    const serverUrl =
+      process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3001";
+    const newSocket = io(serverUrl);
     setSocket(newSocket);
 
     newSocket.on("connect", () => {
