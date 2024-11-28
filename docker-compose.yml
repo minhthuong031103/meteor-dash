@@ -18,7 +18,3 @@ services:
       dockerfile: Dockerfile.server
     ports:
       - "3001:3001"
-networks:
-  default:
-    external:
-      name: bridge
