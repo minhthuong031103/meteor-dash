@@ -91,7 +91,7 @@ export default function Home() {
   useEffect(() => {
     const serverUrl =
       process.env.NEXT_PUBLIC_SERVER_URL || "https://meteordash.io.vn";
-    const newSocket = io(serverUrl);
+    const newSocket = io(serverUrl, { path: "/socket" });
     setSocket(newSocket);
 
     newSocket.on("connect", () => {
